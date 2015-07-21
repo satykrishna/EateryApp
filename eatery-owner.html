@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>IndianCuisine</title>
+
+    <!-- Bootstrap -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="fontAwesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href = 'styles/eatery.css' type="text/css" rel="stylesheet">
+
+</head>
+
+<body>
+
+
+<!-- creation of navbar-->
+<nav class="navbar navbar-inverse ">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="glyphicon glyphicon-circle-arrow-down"></span>
+
+            </button>
+            <a class="navbar-brand" href="#">Indian Cuisine</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Menu</a></li>
+                <li><a href="#">Home Delivery</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"><span class="glyphicon glyphicon-download"></span> Download App</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-map-marker"></span> Find us</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- end of creation of navbar -->
+
+<div class='row'>
+
+    <div class=' col-sm-offset-1 col-md-offset-1 col-lg-offset-1 col-sm-3 col-md-3 col-lg-3'>
+        <div class='well'>
+
+            <div class="navbar-header">
+
+                <button type="button" class="navbar-toggle pull-left" data-toggle="collapse"
+                        data-target="#menuforOwner">
+                    <span class='menu text-center'> CHOOSE FROM FOLLOWING</span> <span
+                        class='glyphicon glyphicon-chevron-down'></span></span>
+                </button>
+
+            </div>
+            <div class="collapse  navbar-collapse" id="menuforOwner">
+                <ul class="nav nav-pills nav-stacked">
+                    <li class="active"><a data-toggle="pill" href="#viewReservation">View Reservation</a></li>
+                    <li><a data-toggle="pill" href="#viewSeatingArea">View seating area</a></li>
+                    <li><a data-toggle="pill" href="#cereserve">Create and Edit a Reservation</a></li>
+                    <li><a data-toggle="pill" href="#seeEditProfileUpdateSettings">Profile & Settings</a></li>
+                    <li><a data-toggle="pill" href="#">Assign Table</a></li>
+                    <li><a data-toggle="pill" href="#">Auto Assign Table</a></li>
+                    <li><a data-toggle="pill" href="#">Change Table</a></li>
+                    <li><a data-toggle="pill" href="#contactList"> View Contact List</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <div class=' col-sm-7 col-md-7 col-lg-7'>
+
+        <!-- start of all tabs content -->
+        <div class="tab-content">
+
+            <!-- start of view reservation-->
+            <div id="viewReservation" class="tab-pane fade in active">
+                <h2 class = 'text-info text-center'>List of Reservations</h2>
+
+                <div class='well'>
+                    <section>
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search Reservation"
+                                   id="inputSearch">
+
+                            <div class="input-group-btn">
+                                <button class="btn btn-primary" type="submit"><i
+                                        class="glyphicon glyphicon-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <ul class="pagination pull-right">
+                            <li><a href="#">&laquo;</a>
+                            </li>
+                            <li class="active"><a href="#">1</a>
+                            </li>
+                            <li><a href="#">2</a>
+                            </li>
+                            <li><a href="#">3</a>
+                            </li>
+                            <li><a href="#">4</a>
+                            </li>
+                            <li><a href="#">5</a>
+                            </li>
+                            <li><a href="#">&raquo;</a>
+                            </li>
+                        </ul>
+                        <table class="table table-condensed table-striped">
+                            <thead>
+                            <tr>
+                                <th>CNF#</th>
+                                <th>Name</th>
+                                <th>Date</th>
+                                <th>#</th>
+                                <th>Action</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>DA83CD</td>
+                                <td>Satyakrishna</td>
+                                <td>05/10/2014 1:30PM</td>
+                                <td>4</td>
+                                <td>
+                                    <button class="btn btn-primary" title="Open Details" data-toggle="modal"
+                                            data-target="#tableselectandMap">
+                                        <span class="glyphicon glyphicon-share"></span>
+                                        <span class="btn-text">Details</span>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>DA83CD</td>
+                                <td>Satyakrishna</td>
+                                <td>05/10/2014 1:30PM</td>
+                                <td>4</td>
+                                <td>
+                                    <button class="btn btn-primary" title="Open Details" data-toggle="modal"
+                                            data-target="#tableselectandMap">
+                                        <span class="glyphicon glyphicon-share"></span>
+                                        <span class="btn-text">Details</span>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>DA83CD</td>
+                                <td>Satyakrishna</td>
+                                <td>05/10/2014 1:30PM</td>
+                                <td>4</td>
+                                <td>
+                                    <button class="btn btn-primary" title="Open Details" data-toggle="modal"
+                                            data-target="#tableselectandMap">
+                                        <span class="glyphicon glyphicon-share"></span>
+                                        <span class="btn-text">Details</span>
+                                    </button>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </section>
+                </div>
+            </div>
+
+            <!-- modal dialog for seat map -->
+            <div id="tableselectandMap" class="modal fade in" role="dialog">
+                <div class="modal-dialog modal-lg">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Seat Map</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class='row'>
+
+                                <div class='col-xs-12 col-md-8 col-lg-8'>
+                                    <div class='row'>
+
+                                        <div class='col-xs-4 col-sm-4 col-md-4 col-lg-4'>
+                                            <a href='#'>
+                                                <div class='well'>
+                                                    Table 1
+                                                </div>
+                                            </a>
+                                        </div>
+
+                                        <div class='col-xs-4 col-sm-4 col-md-4 col-lg-4'>
+                                            <a href='#'>
+                                                <div class='well'>
+                                                    Table 2
+                                                </div>
+                                            </a>
+                                        </div>
+
+                                        <div class='col-xs-4 col-sm-4 col-md-4 col-lg-4'>
+                                            <a href='#'>
+                                                <div class='well'>
+                                                    Table 3
+                                                </div>
+                                            </a>
+                                        </div>
+
+
+                                    </div>
+
+
+                                    <div class='row'>
+
+                                        <div class='col-xs-4 col-sm-4 col-md-4 col-lg-4'>
+                                            <a href='#'>
+                                                <div class='well'>
+                                                    Table 4
+                                                </div>
+                                            </a>
+                                        </div>
+
+                                        <div class='col-xs-4 col-sm-4 col-md-4 col-lg-4'>
+                                            <a href='#'>
+                                                <div class='well'>
+                                                    Table 5
+                                                </div>
+                                            </a>
+                                        </div>
+
+                                        <div class='col-xs-4 col-sm-4 col-md-4 col-lg-4'>
+                                            <a href='#'>
+                                                <div class='well'>
+                                                    Table 6
+                                                </div>
+                                            </a>
+                                        </div>
+
+
+                                    </div>
+
+
+                                    <div class='row'>
+
+                                        <div class='col-xs-4 col-sm-4 col-md-4 col-lg-4'>
+                                            <a href='#'>
+                                                <div class='well'>
+                                                    Table 7
+                                                </div>
+                                            </a>
+                                        </div>
+
+                                        <div class='col-xs-4 col-sm-4 col-md-4 col-lg-4'>
+                                            <a href='#'>
+                                                <div class='well'>
+                                                    Table 8
+                                                </div>
+                                            </a>
+                                        </div>
+
+                                        <div class='col-xs-4 col-sm-4 col-md-4 col-lg-4'>
+                                            <a href='#'>
+                                                <div class='well'>
+                                                    Table 9
+                                                </div>
+                                            </a>
+                                        </div>
+
+
+                                    </div>
+
+
+                                </div>
+
+
+                                <div class='col-xs-10 col-md-4 col-lg-4'>
+
+                                    <div class='well'>
+                                        Table Details
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <div class='panel-footer text-center'>
+                                <div class='row'>
+                                    <div class='col-sm-12 col-md-12 col-lg-12'>
+                                        <button type="button" class="btn btn-default btn-sm"
+                                                data-dismiss="modal">
+                                            Close
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end of modal dialog for seat map -->
+            <!-- end of view reservation -->
+
+
+            <!-- start of view seating area tab -->
+            <div id="viewSeatingArea" class="tab-pane fade">
+                <h3 class = 'text-center text-info'>Seating Area</h3>
+
+                <div class="container">
+                    <div class='well'>
+                        <div class="col-xs-12 col-sm-6">
+                            <table class="table table-striped table-responsive ">
+                                <thead>
+                                <tr>
+                                    <th>Table#</th>
+                                    <th>Size</th>
+                                    <th>Status</th>
+                                    <th>Since</th>
+                                    <th>CNF#</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>4</td>
+                                    <td>Occupied</td>
+                                    <td>1:30PM</td>
+                                    <td>
+                                        <button type="button" class="btn btn-link">DA83CD</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>4</td>
+                                    <td>Occupied</td>
+                                    <td>1:30PM</td>
+                                    <td>
+                                        <button type="button" class="btn btn-link">DA83CD</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>4</td>
+                                    <td>Occupied</td>
+                                    <td>1:30PM</td>
+                                    <td>
+                                        <button type="button" class="btn btn-link">DA83CD</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>4</td>
+                                    <td>Occupied</td>
+                                    <td>1:30PM</td>
+                                    <td>
+                                        <button type="button" class="btn btn-link">DA83CD</button>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end of view seating area tab-->
+
+
+            <!--start of create or edit Reservation tab -->
+            <div id="cereserve" class="tab-pane fade">
+                <ul class="nav nav-tabs nav-justified">
+                    <li class="active"><a data-toggle="tab" href="#crR">Create Reservation</a></li>
+                    <li><a data-toggle="tab" href="#mer">Modify Reservation</a></li>
+
+                </ul>
+
+                <div class="tab-content">
+                    <!-- start of create reservation tab -->
+                    <div id="crR" class="tab-pane fade in active">
+
+                        <div class="well">
+                            <form role="form">
+                                <div class='row'>
+                                    <div class='col-sm-12 col-md-12 col-lg-12'>
+                                        <div class="form-group">
+                                            <label for="cname" class='sr-only'>Name</label>
+                                            <input type="text" class="form-control input-sm" id="cname"
+                                                   placeholder="Enter Customer Name here">
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class='row'>
+                                    <div class='col-sm-6 col-md-6 col-lg-6'>
+                                        <div class="form-group">
+                                            <label for="cemail" class='sr-only'>Email</label>
+                                            <input type="email" class="form-control input-sm" id="cemail"
+                                                   placeholder="Enter customer Email here">
+                                        </div>
+                                    </div>
+                                    <div class='col-sm-6 col-md-6 col-lg-6'>
+                                        <div class="form-group">
+                                            <label for="cPhone" class='sr-only'>Phone</label>
+                                            <input type="tel" class="form-control input-sm" id="cPhone"
+                                                   placeholder="Enter customer Phone number">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class='row'>
+                                    <div class='col-sm-6 col-md-6 col-lg-6'>
+                                        <div class="form-group">
+                                            <label for="cdate">Enter Reservation Date</label>
+                                            <input type="date" class="form-control input-sm" id="cdate"
+                                                   placeholder="Reservation Date">
+                                        </div>
+                                    </div>
+                                    <div class='col-sm-6 col-md-6 col-lg-6'>
+                                        <div class="form-group">
+                                            <label for="cTime">Enter Reservation Time</label>
+                                            <input type="time" class="form-control input-sm" id="cTime"
+                                                   placeholder="Enter Reservation Time">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class='row'>
+                                    <div class='col-sm-6 col-md-6 col-lg-6'>
+                                        <div class="form-group">
+                                            <label for="partySize" class='sr-only'>Enter Party size</label>
+                                            <input type="number" class="form-control input-sm"
+                                                   id="partySize"
+                                                   placeholder="Enter Party Size">
+                                        </div>
+                                    </div>
+                                    <div class='col-sm-6 col-md-6 col-lg-6'>
+                                        <div class="form-group">
+                                            <label for="specialNeed" class='sr-only'>Special Needs</label>
+                                            <input type="text" class="form-control input-sm"
+                                                   id="specialNeed"
+                                                   placeholder="Enter Special Need like Birthday, anniversary, marriage">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class='row'>
+                                    <div class='col-sm-offset-5  col-md-offset-5 col-lg-offset-5 col-sm-7 col-md-7 col-lg-7'>
+                                        <div class="form-group">
+                                            <button type='button' class="btn btn-group-lg btn-primary">
+                                                Submit
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class='row'>
+                                    <div class='col-sm-6 col-md-6 col-lg-6'>
+                                        <label for="reservationId" class='text-info'>Reservation Id is <strong
+                                                id='reservationId'>A1234</strong>
+                                        </label>
+                                    </div>
+                                    <div class='col-sm-6 col-md-6 col-lg-6'>
+                                        <label for='status' class='text-info'>Status is <strong id="status">
+                                            Waiting/confirmed</strong></label>
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                    <!--end of create reservation tab -->
+
+                    <!-- start of modify reservation tab -->
+                    <div id="mer" class="tab-pane fade" style="margin: 1em">
+                        <div class='panel panel-default'>
+                            <div class='panel-body'>
+                                <form action='' role='form'>
+                                    <div class='row'>
+                                        <div class='col-sm-8 col-md-8 col-lg-8'>
+                                            <div class="form-group">
+
+                                                <label for="ccode" class="sr-only ">Enter the Confirmation
+                                                    code</label>
+                                                <input type="text" class="form-control input-sm" id="ccode"
+                                                       placeholder="Enter Confirmation Code for existing Reservation">
+                                            </div>
+                                        </div>
+                                        <div class='col-sm-4 col-md-4 col-lg-4'>
+                                            <div class="form-group">
+                                                <button class='btn btn-primary btn-sm' type='button'>Fetch
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                                <form class="form-horizontal" role="form">
+                                    <div class="form-group form-group-sm">
+                                        <label class="col-sm-2 control-label" for="sm">Name</label>
+
+                                        <div class="col-sm-10">
+                                            <p class="form-control-static">Satyakrishna Kondapalli</p>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="form-group form-group-sm">
+
+                                        <label class="col-sm-2 control-label" for="newpartysize"> You want
+                                            to </label>
+
+                                        <div class="col-xs-offset-1 col-sm-offset-1 col-sm-5">
+                                            <label class='radio'><input type='radio' class='radio'
+                                                                        name='option'>
+                                                Modify Reservation</label>
+                                            <label class='radio'><input type='radio' class='radio'
+                                                                        name='option'>
+                                                cancel Reservation</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group form-group-sm">
+
+                                        <label class="col-sm-2 control-label" for="newDate"> Date</label>
+
+                                        <div class="col-sm-5">
+                                            <input class="form-control input-sm" id="inputsm" type="date">
+                                        </div>
+
+                                    </div>
+
+                                    <div class="form-group form-group-sm">
+
+                                        <label class="col-sm-2 control-label" for="newTime"> Time</label>
+
+                                        <div class="col-sm-5">
+                                            <input type="time" class="form-control" id="newreserveTime"
+                                                   placeholder="HH:MM">
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="form-group form-group-sm">
+
+                                        <label class="col-sm-2 control-label" for="newpartysize"> party
+                                            Size</label>
+
+                                        <div class="col-sm-5">
+                                            <input type="number" class="form-control" id="NewreserveSize"
+                                                   placeholder="# Guests">
+
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group form-group-sm">
+
+
+                                        <div class=" col-xs-offset-3 col-xs-9">
+                                            <button type='button' class='btn btn-primary btn-sm' id='change'>
+                                                confirm
+                                            </button>
+                                        </div>
+
+
+                                    </div>
+                                </form>
+                            </div>
+                            <div class='panel-footer'>
+                                Reservation is either cancelled/Modified
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <!-- end of modify reservation tab -->
+                </div>
+            </div>
+            <!--end of create or edit Reservation tab -->
+
+
+            <!--start of create or edit profile tab and update settings tab -->
+            <div id="seeEditProfileUpdateSettings" class="tab-pane fade">
+
+
+
+                <div class='row'>
+                    <div class='col-sm-12 col-md-6 col-lg-6'>
+                        <!--start: click here to view or modify profile and settings -->
+
+                        <a type="button" class="btn btn-info btn-lg" data-toggle="modal"
+                           data-target="#myProfile"><span class='glyphicon glyphicon-user'
+                                                          title="Click here to View or Modify Profile"></span>&nbsp;Click
+                            here to view or edit profile</a>
+
+                        <!-- end: click here to view or modify profile and settings-->
+                    </div>
+
+                    <div class='col-sm-12 col-md-6 col-lg-6'>
+                        <!--start of  click here to update settings -->
+
+                        <a type="button" class="btn btn-info btn-lg" data-toggle="modal"
+                           data-target="#update"><span class='glyphicon glyphicon glyphicon-cog'
+                                                       title="Click here to Update"></span>&nbsp;Click here
+                            to update settings</a>
+                        <!-- end of click here to update settings-->
+                    </div>
+
+                    <!-- Modal for update settings -->
+                    <div id="update" class="modal fade out" role="dialog">
+                        <div class="modal-dialog modal-lg">
+
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close"
+                                            data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">Settings</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <form action='' role='form' class='form-horizontal'>
+                                        <div class='form-group'>
+                                            <div class=' col-sm-offset-2 col-md-offset-2 col-lg-offset-2 col-sm-3 col-md-3 col-lg-3'>
+                                                <label class='form-control-static'>Auto assign</label>
+                                            </div>
+                                            <div class='col-sm-7 col-md-7 col-lg-7'>
+
+                                                <label class='radio-inline'><input type="radio"
+                                                                                   name="optradio">ON</label>
+                                                <label class='radio-inline'><input type="radio"
+                                                                                   name="optradio">OFF</label>
+                                            </div>
+                                        </div>
+                                        <div class='form-group'>
+                                            <div class=' col-sm-offset-2 col-md-offset-2 col-lg-offset-2 col-sm-3 col-md-3 col-lg-3'>
+                                                <label class='form-control-static'>Restaurant Opens on
+                                                </label>
+                                            </div>
+                                            <div class='col-sm-5 col-md-5 col-lg-5'>
+                                                <input type='datetime-local' class="form-control input-sm"
+                                                       placeholder="Enter Date and Time">
+                                            </div>
+                                        </div>
+                                        <div class='form-group'>
+                                            <div class=' col-sm-offset-2 col-md-offset-2 col-lg-offset-2 col-sm-3 col-md-3 col-lg-3'>
+                                                <label class='form-control-static'>Restaurant closes on
+                                                </label>
+                                            </div>
+                                            <div class='col-sm-5 col-md-5 col-lg-5'>
+                                                <input type='datetime-local' class="form-control input-sm"
+                                                       placeholder="Enter Date and Time">
+                                            </div>
+                                        </div>
+                                    </form>
+
+                                </div>
+                                <div class="modal-footer">
+                                    <div class='panel-footer text-center'>
+                                        <div class='row'>
+                                            <div class='col-lg-offset-2 col-sm-offset-2 col-md-offset-2 col-sm-3 col-md-3 col-lg-3'>
+                                                <button type="button" class="btn btn-default"
+                                                        data-dismiss="modal">
+                                                    Update
+                                                </button>
+                                            </div>
+                                            <div class='col-sm-1 col-md-1 col-lg-1'>
+                                                <button type="button" class="btn btn-default"
+                                                        data-dismiss="modal">
+                                                    Close
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- end of modal of update settings-->
+
+                    <!-- Modal for view and edit profile -->
+                    <div id="myProfile" class="modal fade out" role="dialog">
+                        <div class="modal-dialog modal-lg">
+
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close"
+                                            data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">Your Profile</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <form action='' role='form' class='form-horizontal'>
+
+                                        <div class='form-group'>
+                                            <div class=' col-sm-offset-2 col-md-offset-2 col-lg-offset-2 col-sm-3 col-md-3 col-lg-3'>
+                                                <label class='form-control-static'>Your Name:</label>
+                                            </div>
+                                            <div class='col-sm-7 col-md-7 col-lg-7'>
+
+                                                <div class=' col-sm-offset-2 col-md-offset-2 col-lg-offset-2 col-sm-5 col-md-5 col-lg-5'>
+                                                    <label class='form-control-static'>Satyakrishna
+                                                        Kondapalli</label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class='form-group'>
+                                            <div class=' col-sm-offset-2 col-md-offset-2 col-lg-offset-2 col-sm-3 col-md-3 col-lg-3'>
+                                                <label class='form-control-static'>Your Email:</label>
+                                            </div>
+                                            <div class='col-sm-7 col-md-7 col-lg-7'>
+
+                                                <div class=' col-sm-offset-2 col-md-offset-2 col-lg-offset-2 col-sm-3 col-md-3 col-lg-3'>
+                                                    <label class='form-control-static'>satykrishna@gmail.com</label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class='form-group'>
+                                            <div class=' col-sm-offset-2 col-md-offset-2 col-lg-offset-2 col-sm-3 col-md-3 col-lg-3'>
+                                                <label class='form-control-static'>Your Phone
+                                                    Number:</label>
+                                            </div>
+                                            <div class='col-sm-7 col-md-7 col-lg-7'>
+
+                                                <div class=' col-sm-offset-2 col-md-offset-2 col-lg-offset-2 col-sm-5 col-md-5 col-lg-5'>
+                                                    <label class='form-control-static'>2105185210</label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class='form-group'>
+                                            <div class=' col-sm-offset-2 col-md-offset-2 col-lg-offset-2 col-sm-3 col-md-3 col-lg-3'>
+                                                <label class='form-control-static'>Your Address:</label>
+                                            </div>
+                                            <div class='col-sm-7 col-md-7 col-lg-7'>
+
+                                                <div class=' col-sm-offset-2 col-md-offset-2 col-lg-offset-2 col-sm-10 col-md-10 col-lg-10'>
+                                                    <label class='form-control-static'>3800SW 34th Stret APT
+                                                        II 358 GNV</label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </form>
+
+                                </div>
+                                <div class="modal-footer">
+                                    <div class='panel-footer text-center'>
+                                        <div class='row'>
+                                            <div class='col-lg-offset-2 col-sm-offset-2 col-md-offset-2 col-sm-3 col-md-3 col-lg-3'>
+                                                <button type="button" class="btn btn-default"
+                                                        data-dismiss="modal">
+                                                    Click here to Update
+                                                </button>
+                                            </div>
+                                            <div class='col-sm-1 col-md-1 col-lg-1'>
+                                                <button type="button" class="btn btn-default"
+                                                        data-dismiss="modal">
+                                                    Close
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- end of modal of view and edit profile-->
+
+
+                </div>
+
+
+
+            </div>
+            <!--end of create or edit profile tab  and update settings tab-->
+
+
+            <!-- start: view contact List Tab -->
+            <div id="contactList" class="tab-pane fade">
+                <div class = 'well'>
+
+                    <form action='' role='form'>
+                        <div class='row'>
+                            <div class="input-group">
+                                <input type="text" class="form-control"
+                                       placeholder="Enter Customer name here to search" id="searchName">
+
+                                <div class="input-group-btn">
+                                    <button class="btn btn-primary" type="submit"><i
+                                            class="glyphicon glyphicon-search"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <div class='row'>
+                            <div class='panel-group' class='accordion'>
+                                <div class='panel panel-default'>
+                                    <div class='panel-heading'>
+                                        <div class='panel-title'>
+                                            <a href='#collapse2' data-toggle="collapse" data-parent="accordion">
+                                                Satyakrishna Kondapalli
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class='panel-collapse collapse' id='collapse2'>
+                                        <div class='panel-body'>
+                                            Display his reservation details here
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class='panel panel-default'>
+                                    <div class='panel-heading'>
+                                        <div class='panel-title'>
+                                            <a href='#collapse1' data-toggle="collapse" data-parent="accordion">
+                                                Satyakrishna Kondapalli
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class='panel-collapse collapse' id='collapse1'>
+                                        <div class='panel-body'>
+                                            Display his reservation details here
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+            <!-- end: view contact List Tab -->
+
+
+        </div>
+
+
+        <!-- end of all tab contents -->
+    </div>
+
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
