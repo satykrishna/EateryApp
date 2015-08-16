@@ -57,7 +57,7 @@ RESTful API:
 ------------
         Data exchange format: JSON
         Jersey + Jackson
-        Database : MySQL,
+        Database : MySQL
         Server: Tomcat
 
 JavaScript :
