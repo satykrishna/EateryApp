@@ -11,8 +11,9 @@ Users:
     1. Customers 
     2. Owner. Owner needs to be authenticated.
     
-    Customers
-    =========
+    
+Customers
+=========
     Creating a Reservation:
         Customers can reserve a table by providing date, time, party size, contact details.
         If reservation is in Waiting status, ask customer to confirm.
@@ -23,8 +24,8 @@ Users:
         Use same Confirmation Code and return new status.
         Customers can cancel an existing reservation using Confirmation Code.
    
-    Owner
-    =====
+Owner
+=====
      Login:
         Owner can login using email and password.
         No registration module is required.
@@ -52,21 +53,24 @@ Users:
         
         
 User Interface Design: 
-    
+ =====================   
        It's a responsive web design. Tested on desktop and tablet. 
        Bootstrap framework is used
 
 RESTful API:
+------------
         Data exchange format: JSON
         Jersey + Jackson
         Database : MySQL,
         Server: Tomcat
 
 JavaScript :
+------------
         Single Page Application using AngularJS
         Multiple views, routing, followed John papa styleguide.
 
 Build, Optimization, and Testing:
+--------------------------------
     grunt is used for minification.
 
 
