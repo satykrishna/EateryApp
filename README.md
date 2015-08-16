@@ -1,24 +1,20 @@
 ABOUT THIS PROJECT
 ===================
-
-
 The website offers online reservation system where customer can reserve a table at restaurant online and can specify what kind of event he/she would like to celebrate at the restaurant for that particular reservation. The owner of the restaurant can monitor the reservations and restaurant details.
 
 DETAILED EXPLANATION
 ===================================
 Users:
------
+=====
     1. Customers 
     2. Owner. Owner needs to be authenticated.
-    
-    
-Customers
+ Customers
 =========
     Creating a Reservation:
         Customers can reserve a table by providing date, time, party size, contact details.
         If reservation is in Waiting status, ask customer to confirm.
         Provide a unique Confirmation Code and status back to the customer.
-   Edit/Cancel a Reservation:
+    Edit/Cancel a Reservation:
         Customers can edit an existing reservation using Confirmation Code.
         Customers can edit date, time, and party size.
         Use same Confirmation Code and return new status.
@@ -50,10 +46,10 @@ Owner
         Owner should be able to change the table for a reservation.
     View Contact List:
         Owner can view contact list of all the customers and their past reservations.
-        
-        
-User Interface Design: 
- =====================   
+       
+USER INTERFACE DESIGN
+=======================
+    
        It's a responsive web design. Tested on desktop and tablet. 
        Bootstrap framework is used
 
