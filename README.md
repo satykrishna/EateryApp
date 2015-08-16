@@ -1,55 +1,72 @@
-The project has following functionalities
+ABOUT THIS PROJECT
+===================
 
-    Users: Customers and the Owner. Owner needs to be authenticated.
-    Customers | Creating a Reservation:
+
+The website offers online reservation system where customer can reserve a table at restaurant online and can specify what kind of event he/she would like to celebrate at the restaurant for that particular reservation. The owner of the restaurant can monitor the reservations and restaurant details.
+
+DETAILED EXPLANATION
+===================================
+Users:
+-----
+    1. Customers 
+    2. Owner. Owner needs to be authenticated.
+    
+    Customers
+    =========
+    Creating a Reservation:
         Customers can reserve a table by providing date, time, party size, contact details.
         If reservation is in Waiting status, ask customer to confirm.
         Provide a unique Confirmation Code and status back to the customer.
-    Customers | Edit/Cancel a Reservation:
+   Edit/Cancel a Reservation:
         Customers can edit an existing reservation using Confirmation Code.
         Customers can edit date, time, and party size.
         Use same Confirmation Code and return new status.
         Customers can cancel an existing reservation using Confirmation Code.
-    Owner | Login:
+   
+    Owner
+    =====
+     Login:
         Owner can login using email and password.
         No registration module is required.
-    Owner | View Reservation:
+     View Reservation:
         Owner can view list of reservations.
         Click on each reservation item for more details.
-    Owner | View Seating Area
+    View Seating Area
         Owner can view seating area (tables) in a list form.
         Each item can have ConfirmationCode, Size, Status, Since fields.
         On clicking ConfirmationCode, open reservation detail screen.
-    Owner | Create and Edit a Reservation:
+     Create and Edit a Reservation:
         Same as Customer Create and Edit Reservation flows.
-
-    Owner | Profile & Settings:
+     Profile & Settings:
         Owner can view/edit restaurant profile details like Name, Contact, Email, Address etc.
         Owner can update settings like Auto Assign, Restaurant Open/Closing days and times etc.
-    Owner | Assign Table:
+    Assign Table:
         Open reservation detail screen from list of reservations.
         On clicking Assign Table, open seating map and select table.
-    Owner | Auto Assign Table:
+    Auto Assign Table:
         If Auto Assign is enabled, system should assign the table to a new reservation automatically.
-    Owner | Change Table:
+    Change Table:
         Owner should be able to change the table for a reservation.
-    Owner | View Contact List:
+    View Contact List:
         Owner can view contact list of all the customers and their past reservations.
         
         
-User Interface Design:
+User Interface Design: 
     
-        Responsive Design. Test on desktop and tablet. Mobile optional but recommended.
-        You can use a CSS framework like Bootstrap.
-        Use HTML5 and CSS3 features like new elements, fonts, transitions, transformations.
-    RESTful API:
+       It's a responsive web design. Tested on desktop and tablet. 
+       Bootstrap framework is used
+
+RESTful API:
         Data exchange format: JSON
-        Jersey + Jackson (preferred)
-        MySQL, Tomcat (or any other J2EE server/container)
-    JavaScript :
+        Jersey + Jackson
+        Database : MySQL,
+        Server: Tomcat
+
+JavaScript :
         Single Page Application using AngularJS
-        Multiple views, routing, follow a style-guide.
-    Build, Optimization, and Testing:
-        grunt
-        Protractor for e2e testing.
+        Multiple views, routing, followed John papa styleguide.
+
+Build, Optimization, and Testing:
+    grunt is used for minification.
+
 
