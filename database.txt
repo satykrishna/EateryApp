@@ -1,0 +1,46 @@
+create table owner (
+
+email varchar(25) NOT NULL,
+password varchar(25) NOT NULL, 
+name varchar(25) NOT NULL, 
+phoneNo varchar(25) NOT NULL, 
+address varchar(60)
+
+);
+
+
+
+Insert into owner (email, password, name, phoneNo, address) values ('satykrishna@gmail.com', 'Infy!123', 'satyakrishna', 
+'2105185210', '3800 SW 34th ST GAINESVILLE')
+
+create table reservation (
+
+customername char(50) NOT NULL, 
+email varchar(40) NOT NULL, 
+phoneNo varchar(10) NOT NULL, 
+tableNo int(11) NOT NULL, 
+partySize int(11) NOT NULL, 
+reserveDate varchar(50) NOT NULL, 
+reserveTime varchar(50) NOT NULL, 
+specialneed varchar(30) NOT NULL,
+reservestatus varchar(1) DEFAULT 'W', 
+confirmcode varchar(4) PRIMARY KEY
+)
+
+
+
+
+
+create table restaurant(
+name char(30) PRIMARY KEY, 
+contact varchar(30) NOT NULL, 
+email varchar(35) NOT NULL, 
+opendate varchar(30) NOT NULL, 
+closedate varchar(30) NOT NULL, 
+opentime varchar(30) NOT NULL, 
+closetime varchar(30) NOT NULL, 
+address varchar(80) NOT NULL,
+autoassign varchar(3) NOT NULL, 
+numberoftables int
+)
+

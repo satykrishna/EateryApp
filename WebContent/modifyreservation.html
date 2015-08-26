@@ -1,0 +1,157 @@
+<h3 class='text-center text-info'>Modify or Cancel Existing
+	Reservation</h3>
+<div class='well'>
+	<form novalidate role='form' name='mr'>
+
+		<div class='row'>
+			<div class='col-sm-8 col-md-8 col-lg-8'>
+				<div class="form-group">
+
+					<label for="ccode" class="sr-only ">Enter the Confirmation
+						code</label> <input type="text" class="form-control input-sm" id="ccode"
+						placeholder="Enter Confirmation Code for existing Reservation"
+						name='ccode' required ng-model='mc.code'>
+				</div>
+			</div>
+			<div class='col-sm-4 col-md-4 col-lg-4'>
+				<div class="form-group">
+					<button class='btn btn-primary btn-sm' type='button'
+						ng-click='mc.check();' ng-disabled='mr.$pristine||mr.$invalid'>Fetch
+					</button>
+				</div>
+			</div>
+		</div>
+
+		<div ng-messages='mr.ccode.$error' ng-if='mr.ccode.$dirty'>
+			<p class='alert alert-warning' ng-message='required'>Code is
+				required</p>
+		</div>
+
+
+
+	</form>
+
+	<div class='row' ng-if='mc.error'>
+		<p class='alert alert-warning'>Code is invalid or does not exist
+			in our system</p>
+	</div>
+
+
+	<form class="form-horizontal" role="form" name='delForm'>
+
+		<div ng-if='!mc.k && mc.success'>
+			<div class="form-group form-group-sm">
+				<label class="col-sm-2 control-label" for="sm">Name</label>
+
+				<div class="col-sm-10">
+					<p class="form-control-static">{{mc.res.customername}}</p>
+				</div>
+
+			</div>
+
+			<div class="form-group form-group-sm">
+
+				<label class="col-sm-2 control-label" for="newpartysize">
+					You want to </label>
+
+				<div class="col-xs-offset-1 col-sm-offset-1 col-sm-5">
+					<label class='radio'><input type='radio' class='radio'
+						name='option' ng-click='mc.option = "m";mc.modify =true'>
+						Modify Reservation</label> <label class='radio'><input
+						type='radio' class='radio' name='option'
+						ng-click='mc.option="d";mc.modify = false'> cancel
+						Reservation</label>
+				</div>
+			</div>
+
+			<div class="form-group form-group-sm " ng-if='mc.modify'>
+
+				<label class="col-sm-2 control-label" for="newDate"> Date</label>
+
+				<div class="col-sm-5">
+					<input class="form-control input-sm" id="inputsm" type="date"
+						required ng-model='mc.ndate'>
+				</div>
+
+			</div>
+
+			<div class="form-group form-group-sm" ng-if='mc.modify'>
+
+				<label class="col-sm-2 control-label" for="newTime"> Time</label>
+
+				<div class="col-sm-5">
+					<input type="time" class="form-control" id="newreserveTime"
+						placeholder="HH:MM" required ng-model='mc.ntime'>
+
+				</div>
+
+			</div>
+
+			<div class="form-group form-group-sm" ng-if='mc.modify'>
+				<label class="col-sm-2 control-label" for="newpartysize">
+					party Size</label>
+				<div class="col-sm-5">
+					<input type="number" class="form-control" id="NewreserveSize"
+						placeholder="# Guests" ng-model="mc.partysize" required>
+				</div>
+			</div>
+
+			<div class="form-group form-group-sm">
+				<div class=" col-xs-offset-3 col-xs-9">
+					<button type='button' class='btn btn-primary btn-sm' id='change'
+						ng-click='mc.choose();mc.k = true;'>confirm</button>
+				</div>
+			</div>
+		</div>
+	</form>
+
+	<div class='panel-footer' data-ng-if='mc.deleted'>Reservation
+		with &nbsp; {{mc.res.confirmcode}} confirmation code under the name of
+		&nbsp; {{mc.res.customername}} &nbsp;on &nbsp;
+		{{mc.res.reserveDate|date:'shortDate'}} &nbsp;is cancelled.</div>
+
+</div>
+
+
+
+
+<div class='row' ng-if='mc.k && mc.wait'>
+	<div>
+		<div ng-if='!mc.clicked'>
+			<label class="col-sm-12 control-label text-info" for="cancel">
+				Reservation is in waiting status!!!. You want to </label>
+
+			<div class="col-xs-offset-1 col-sm-offset-1 col-sm-5">
+				<label class='radio'><input type='radio' class='radio'
+					name='option'
+					ng-click='mc.option = "yes";mc.ok();mc.clicked = true'>
+					Yes, confirm reservation</label> <label class='radio'><input
+					type='radio' class='radio' name='option'
+					ng-click='mc.option = "no";mc.ok();mc.clicked = true'>No,
+					cancel Reservation</label>
+			</div>
+		</div>
+		<div ng-if='mc.clicked'>
+			<label ng-if='mc.option == "yes"'
+				class="col-sm-12 control-label text-info" for="cancel">
+				Reservation is in waiting status, please check after some time and
+				Reservationid is &nbsp;<strong id='reservationId'>{{mc.code}}</strong>
+			</label> <label ng-if='mc.option == "no"'
+				class="col-sm-12 control-label text-info" for="cancel">
+				Reservation is cancelled</label>
+
+		</div>
+	</div>
+
+</div>
+
+
+
+<div class='row' ng-if='mc.k && mc.confirm'>
+	<div class='col-sm-12 col-md-12 col-lg-12 text-center'>
+		<label for="reservationId" class='text-info'>Reservation is modified and 
+			confirmed and here is your code &nbsp;<strong id='reservationId'>{{mc.code}}</strong>
+		</label>
+	</div>
+</div>
+</div>

@@ -1,0 +1,265 @@
+
+<!--start of create or edit profile tab and update settings tab -->
+<div id="seeEditProfileUpdateSettings">
+	<div class='row'>
+		<div class='col-sm-12 col-md-6 col-lg-6'>
+			<!--start: click here to view or modify profile and settings -->
+			<a type="button" class="btn btn-info btn-lg" data-toggle="modal"
+				data-target="#myProfile"><span class='glyphicon glyphicon-user'
+				title="Click here to View or Modify Profile"></span>&nbsp;Click here
+				to view or edit profile</a>
+			<!-- end: click here to view or modify profile and settings-->
+		</div>
+		<div class='col-sm-12 col-md-6 col-lg-6'>
+			<!--start of  click here to update settings -->
+			<a type="button" class="btn btn-info btn-lg" data-toggle="modal"
+				data-target="#update"><span
+				class='glyphicon glyphicon glyphicon-cog'
+				title="Click here to Update"></span>&nbsp;Click here to update
+				settings</a>
+			<!-- end of click here to update settings-->
+		</div>
+	</div>
+	<div>
+		<!-- Modal for update settings -->
+		<div id="update" class="modal fade out" role="dialog">
+			<div class="modal-dialog modal-lg">
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h4 class="modal-title">Settings</h4>
+					</div>
+					<div class="modal-body" ng-if='!pc.update'>
+						<form action='' role='form' class='form-horizontal'>
+							<div class='form-group'>
+								<div
+									class=' col-sm-offset-2 col-md-offset-2 col-lg-offset-2 col-sm-3 col-md-3 col-lg-3'>
+									<label class='form-control-static'>Auto assign</label>
+								</div>
+								<div class='col-sm-7 col-md-7 col-lg-7'>
+									<label class='radio-inline'>{{pc.profile.autoassign}}</label>
+								</div>
+							</div>
+							<div class='form-group'>
+								<div
+									class=' col-sm-offset-2 col-md-offset-2 col-lg-offset-2 col-sm-3 col-md-3 col-lg-3'>
+									<label class='form-control-static'>Restaurant Opens on
+									</label>
+								</div>
+								<div class='col-sm-5 col-md-5 col-lg-5'>
+									{{pc.profile.opendate|date:'shortDate'}} &nbsp;
+									{{pc.profile.opentime|date:'shortTime'}}</div>
+							</div>
+							<div class='form-group'>
+								<div
+									class=' col-sm-offset-2 col-md-offset-2 col-lg-offset-2 col-sm-3 col-md-3 col-lg-3'>
+									<label class='form-control-static'>Restaurant closes on
+									</label>
+								</div>
+								<div class='col-sm-5 col-md-5 col-lg-5'>
+									{{pc.profile.closedate|date:'shortDate'}} &nbsp;
+									{{pc.profile.closetime|date:'shortTime'}}</div>
+							</div>
+						</form>
+					</div>
+					<div class="modal-body" ng-if=pc.update>
+						<form action='' role='form' class='form-horizontal'>
+							<div class='form-group'>
+								<div
+									class=' col-sm-offset-2 col-md-offset-2 col-lg-offset-2 col-sm-3 col-md-3 col-lg-3'>
+									<label class='form-control-static'>Auto assign</label>
+								</div>
+								<div class='col-sm-7 col-md-7 col-lg-7'>
+									<label class='radio-inline'><input type="radio"
+										name="optradio" ng-click='pc.profile.autoassign = "ON"'>ON</label>
+									<label class='radio-inline'><input type="radio"
+										name="optradio" ng-click='pc.profile.autoassign = "OFF"'>OFF</label>
+								</div>
+							</div>
+							<div class='form-group'>
+								<div
+									class=' col-sm-offset-2 col-md-offset-2 col-lg-offset-2 col-sm-3 col-md-3 col-lg-3'>
+									<label class='form-control-static'">Restaurant Opens on
+									</label>
+								</div>
+								<div class='col-sm-5 col-md-5 col-lg-5'>
+									<input type='datetime-local' class="form-control input-sm"
+										placeholder="Enter Date and Time" ng-model="pc.open">
+								</div>
+							</div>
+							<div class='form-group'>
+								<div
+									class=' col-sm-offset-2 col-md-offset-2 col-lg-offset-2 col-sm-3 col-md-3 col-lg-3'>
+									<label class='form-control-static'>Restaurant closes on
+									</label>
+								</div>
+								<div class='col-sm-5 col-md-5 col-lg-5'>
+									<input type='datetime-local' class="form-control input-sm"
+										placeholder="Enter Date and Time" ng-model="pc.close">
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="modal-footer">
+						<div class='panel-footer text-center'>
+							<div class='row'>
+								<div
+									class='col-lg-offset-2 col-sm-offset-2 col-md-offset-2 col-sm-3 col-md-3 col-lg-3'>
+									<button type="button" class="btn btn-default"
+										ng-if='!pc.update' ng-click='pc.update =!pc.update'>Want
+										to update?</button>
+									<button type="button" class="btn btn-default" ng-if='pc.update'
+										ng-click='pc.updateOpen();pc.update =!pc.update; '>Click
+										here to update</button>
+								</div>
+								<div class='col-sm-1 col-md-1 col-lg-1'>
+									<button type="button" class="btn btn-default"
+										data-dismiss="modal">Close</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- end of modal of update settings-->
+		<!-- Modal for view and edit profile -->
+		<div id="myProfile" class="modal fade out" role="dialog">
+			<div class="modal-dialog modal-lg">
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h4 class="modal-title">Your Profile</h4>
+					</div>
+					<div class="modal-body">
+						<form action='' role='form' class='form-horizontal'>
+							<div ng-if='!pc.update'>
+								<div class='form-group'>
+									<div
+										class=' col-sm-offset-2 col-md-offset-2 col-lg-offset-2 col-sm-3 col-md-3 col-lg-3'>
+										<label class='form-control-static'>Restaurant Name:</label>
+									</div>
+									<div class='col-sm-7 col-md-7 col-lg-7'>
+										<div
+											class=' col-sm-offset-2 col-md-offset-2 col-lg-offset-2 col-sm-5 col-md-5 col-lg-5'>
+											<label class='form-control-static'>{{pc.profile.name}}</label>
+										</div>
+									</div>
+								</div>
+								<div class='form-group'>
+									<div
+										class=' col-sm-offset-2 col-md-offset-2 col-lg-offset-2 col-sm-3 col-md-3 col-lg-3'>
+										<label class='form-control-static'>Restuarant Email:</label>
+									</div>
+									<div class='col-sm-7 col-md-7 col-lg-7'>
+										<div
+											class=' col-sm-offset-2 col-md-offset-2 col-lg-offset-2 col-sm-3 col-md-3 col-lg-3'>
+											<label class='form-control-static'>{{pc.profile.email}}</label>
+										</div>
+									</div>
+								</div>
+								<div class='form-group'>
+									<div
+										class=' col-sm-offset-2 col-md-offset-2 col-lg-offset-2 col-sm-3 col-md-3 col-lg-3'>
+										<label class='form-control-static'>Restaurant Phone
+											Number:</label>
+									</div>
+									<div class='col-sm-7 col-md-7 col-lg-7'>
+										<div
+											class=' col-sm-offset-2 col-md-offset-2 col-lg-offset-2 col-sm-5 col-md-5 col-lg-5'>
+											<label class='form-control-static'>{{pc.profile.contact}}</label>
+										</div>
+									</div>
+								</div>
+								<div class='form-group'>
+									<div
+										class=' col-sm-offset-2 col-md-offset-2 col-lg-offset-2 col-sm-3 col-md-3 col-lg-3'>
+										<label class='form-control-static'>Restuarant Address:</label>
+									</div>
+									<div class='col-sm-7 col-md-7 col-lg-7'>
+										<div
+											class=' col-sm-offset-2 col-md-offset-2 col-lg-offset-2 col-sm-10 col-md-10 col-lg-10'>
+											<label class='form-control-static'>{{pc.profile.address}}</label>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div ng-if='pc.update'>
+								<div class='form-group'>
+									<div
+										class=' col-sm-offset-2 col-md-offset-2 col-lg-offset-2 col-sm-3 col-md-3 col-lg-3'>
+										<label class='form-control-static'>Restuarant Name:</label>
+									</div>
+									<div class='col-sm-7 col-md-7 col-lg-7'>
+										<input type="text" class="form-control input-sm"
+											placeholder="Enter Restaurant Name here" name='cname'
+											ng-model='pc.profile.name' required>
+									</div>
+								</div>
+								<div class='form-group'>
+									<div
+										class=' col-sm-offset-2 col-md-offset-2 col-lg-offset-2 col-sm-3 col-md-3 col-lg-3'>
+										<label class='form-control-static'>Restaurant Email:</label>
+									</div>
+									<div class='col-sm-7 col-md-7 col-lg-7'>
+										<input type="email" class="form-control input-sm"
+											placeholder="Enter Restaurant email  here" name='pemail'
+											ng-model='pc.profile.email' required>
+									</div>
+								</div>
+								<div class='form-group'>
+									<div
+										class=' col-sm-offset-2 col-md-offset-2 col-lg-offset-2 col-sm-3 col-md-3 col-lg-3'>
+										<label class='form-control-static'>Restuarant Phone
+											Number:</label>
+									</div>
+									<div class='col-sm-7 col-md-7 col-lg-7'>
+										<input type="tel" class="form-control input-sm"
+											placeholder="Enter Restaurant phone number  here"
+											name='pphone' ng-model='pc.profile.contact' required>
+									</div>
+								</div>
+								<div class='form-group'>
+									<div
+										class=' col-sm-offset-2 col-md-offset-2 col-lg-offset-2 col-sm-3 col-md-3 col-lg-3'>
+										<label class='form-control-static'>Restuarant Address:</label>
+									</div>
+									<div class='col-sm-7 col-md-7 col-lg-7'>
+										<input type="text" class="form-control input-sm"
+											placeholder="Enter Restaurant Address   here" name='padd'
+											ng-model='pc.profile.address' required>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="modal-footer">
+						<div class='panel-footer text-center'>
+							<div class='row'>
+								<div ng-if='!pc.update'
+									class='col-lg-offset-2 col-sm-offset-2 col-md-offset-2 col-sm-3 col-md-3 col-lg-3'>
+									<button type="button" class="btn btn-default"
+										ng-click='pc.update =!pc.update'>Want to update?</button>
+								</div>
+								<div ng-if='pc.update'
+									class='col-lg-offset-2 col-sm-offset-2 col-md-offset-2 col-sm-3 col-md-3 col-lg-3'>
+									<button type="button" class="btn btn-default"
+										data-ng-click='pc.modify();pc.update = !pc.update'>Click
+										here to Update</button>
+								</div>
+								<div class='col-sm-1 col-md-1 col-lg-1'>
+									<button type="button" class="btn btn-default"
+										data-dismiss="modal">Close</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- end of modal of view and edit profile-->
+	</div>
+</div>
+<!--end of create or edit profile tab  and update settings tab-->

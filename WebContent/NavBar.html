@@ -1,0 +1,29 @@
+
+	<!-- creation of navbar-->
+	<nav class="navbar navbar-default ">
+		<div class="container" ng-controller = "Profilecontroller as pc">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target="#myNavbar">
+					<span class="glyphicon glyphicon-circle-arrow-down"></span>
+
+				</button>
+				<a class="navbar-brand" href="#" id='product'>{{pc.profile.name}}</a>
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="#">Home</a></li>
+					<li><a href="#">About Us</a></li>
+					<li><a href="#">Menu</a></li>
+					<li><a href="#">Home Delivery</a></li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#"><span class="glyphicon glyphicon-download"></span>
+							Download App</a></li>
+					<li><a href="#"><span
+							class="glyphicon glyphicon-map-marker"></span> Find us</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<!-- end of creation of navbar -->

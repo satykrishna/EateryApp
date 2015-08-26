@@ -1,0 +1,71 @@
+.mainPage {
+
+    color: white;
+}
+
+
+body {
+    background: whitesmoke;
+    font-family: cursive; 
+    font-color: blue; 
+    font-weight: bold;
+    
+}
+
+.navbar, #myNavbar a {
+    background-color: white;
+    font-family: cursive;
+    font-color: #265a88;
+    font-size: smaller;
+    color: #265a88;
+    border: none;
+}
+
+.icon-bar {
+    background-color: black;
+    color: white;
+
+}
+
+.well {
+    background-color: inherit;
+    border: none;
+}
+
+#menuforLogin ul li {
+    background-color: inherit;
+    border: none;
+    font-family: cursive;
+    color: #265a88;
+    font-weight: bolder;
+    border-radius: 50%;
+
+}
+
+#menuforLogin .list-group-item:hover, #menuforLogin .list-group-item:active {
+    background-color: white;
+    border-radius: 50%;
+    border: 1px solid white;
+}
+
+.menu a {
+    color: #265a88;
+}
+
+.menu {
+    background: inherit;
+    font-size: smaller;
+    font-weight: bolder;
+    font-color: blue;
+
+}
+
+
+#product #product:hover{
+	
+	 font-size: smaller;
+    font-weight: bolder;
+    font-color: blue;
+	
+	
+}

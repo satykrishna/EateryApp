@@ -1,0 +1,109 @@
+
+<!-- start: view contact List Tab -->
+<div id="contactList">
+	<div class='well'>
+		<form action='' role='form'>
+			<div class='row'>
+				<div class="input-group">
+					<input type="text" class="form-control"
+						placeholder="Enter Customer name here to search" id="searchName"
+						ng-model='cd.searchstr' ng-change='cd.get();'>
+					<div class="input-group-btn">
+						<button class="btn btn-primary" type="button">
+							<i class="glyphicon glyphicon-search"></i>
+						</button>
+					</div>
+				</div>
+			</div>
+			<hr>
+			<div class='row'>
+				<table class="table table-condensed table-striped">
+					<thead>
+						<tr>
+							<th ng-click='cd.sorter = "reserveDate"'>Date</th>
+							<th ng-click='cd.sorter = "tableNo"'>table#</th>
+							<th>Fetch details</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat='r in cd.cus|orderBy:cd.sorter:cd.reverse'
+							ng-click=" cd.selected=r">
+							<td>{{r.reserveDate|date:'shortDate'}}&nbsp;
+								{{r.reserveTime|date:'shortTime'}}</td>
+							<td>{{r.tableNo}}</td>
+							<td>
+								<button class="btn btn-primary" title="Open Details"
+									data-toggle="modal" data-target="#tableselectandMap">
+									<span class="glyphicon glyphicon-share"></span> <span
+										class="btn-text">{{r.confirmcode}}</span>
+								</button>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</form>
+	</div>
+	<!-- end: view contact List Tab -->
+	<div id="tableselectandMap" class="modal fade in" role="dialog">
+		<div class="modal-dialog modal-lg">
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">Customer Details</h4>
+				</div>
+						<div class="modal-body text-center" >
+				<div class='row'>
+					<div class='col-xs-12 col-md-8 col-lg-8'>
+						<div class='well'>
+							<div class='row'>
+								<div class='col-lg-6'>Name</div>
+								<div class='col-lg-6'>{{cd.selected.customername}}</div>
+							</div>
+						</div>
+						<div class='well'>
+							<div class='row'>
+								<div class='col-lg-6'>email</div>
+								<div class='col-lg-6'>{{cd.selected.email}}</div>
+							</div>
+						</div>
+						<div class='well'>
+							<div class='row'>
+								<div class='col-lg-6'>Phone Number</div>
+								<div class='col-lg-6'>{{cd.selected.phoneNo}}</div>
+							</div>
+						</div>
+						<div class='well'>
+							<div class='row'>
+								<div class='col-lg-6'>Reservation Date</div>
+								<div class='col-lg-6'>{{cd.selected.reserveDate|date:'shortDate'}}</div>
+							</div>
+						</div>
+						<div class='well'>
+							<div class='row'>
+								<div class='col-lg-6'>Reservation Time</div>
+								<div class='col-lg-6'>{{cd.selected.reserveTime|date:'shortTime'}}</div>
+							</div>
+						</div>
+						<div class='well'>
+							<div class='row'>
+								<div class='col-lg-6'>Special Need</div>
+								<div class='col-lg-6'>{{cd.selected.specialneed}}</div>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<div class='panel-footer text-center'>
+								<div class='row'>
+									<div class='col-sm-12 col-md-12 col-lg-12'>
+										<button type="button" class="btn btn-default btn-sm"
+											data-dismiss="modal">Close</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+				
+			</div>
