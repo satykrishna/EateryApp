@@ -2,6 +2,8 @@ ABOUT THIS PROJECT
 ===================
 The website offers online reservation system where customer can reserve a table at restaurant online and can specify what kind of event he/she would like to celebrate at the restaurant for that particular reservation. The owner of the restaurant can monitor the reservations and restaurant details.
 
+relevant script files and html files  are located in webcontent folder
+
 DETAILED EXPLANATION
 ===================================
 Users:
